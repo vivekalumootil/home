@@ -182,7 +182,7 @@
     function coin(cx, cy) {
         ctx.beginPath();
         ctx.arc(BLOCKSIZE*(cx+0.5), BLOCKSIZE*WORLDSIZE-(cy+0.5)*BLOCKSIZE, 3, 0, Math.PI*2);
-        ctx.fillStyle = "#EEB7E8";
+        ctx.fillStyle = "#ECADA8";
         ctx.fill();
         ctx.closePath();
     }
@@ -234,7 +234,7 @@
     function drawPacman(x, y) {
         ctx.beginPath();
         ctx.arc(x, canvas.height-y, BLOCKSIZE/2-2.5, 0, Math.PI*2);
-        ctx.fillStyle = "#FFC300  ";
+        ctx.fillStyle = "#FAFA00";
         ctx.fill();
         ctx.closePath();
     }
@@ -243,7 +243,8 @@
         for (i=0; i<4; i++) {
             ctx.beginPath();
             ctx.arc(ghost_x[i], canvas.height-ghost_y[i], BLOCKSIZE/2-2.5, 0, Math.PI*2);
-            ctx.fillStyle = "#F83212";
+            let colors = ["#FF7575", "#FF99EB", "#75FDFF", "#FEE211"]  
+            ctx.fillStyle = colors[i];
             ctx.fill();
             ctx.closePath();
         }
@@ -300,7 +301,7 @@
             document.location.reload();
             clearInterval(interval);
         }
-        if (score >= 1540) {
+        if (score >= 154) {
             alert("YOU WON");
             document.location.reload();
             clearInterval(interval);
